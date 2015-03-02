@@ -322,13 +322,14 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
+         config to 7. 
     <integer name="config_deviceHardwareWakeKeys">64</integer>
-
-    <!-- Performance profiles -->
+	-->
+    <!-- Performance profiles
     <string name="config_perf_profile_prop">powerhal</string>
     <string name="config_perf_profile_default_entry">1</string>
-
+ -->
+	
     <!-- Doze mode -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
     <integer name="config_screenBrightnessDoze">10</integer>

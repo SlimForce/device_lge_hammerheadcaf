@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo cm_hammerheadcaf-userdebug
+add_lunch_combo slim_hammerheadcaf-userdebug
