@@ -322,13 +322,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     ro.telephony.default_network=4 \
     ro.telephony.default_cdma_sub=0 \
-    ro.product.locale.language=zh \
-    ro.product.locale.region=CN \
-    ro.build.target_country=CN \
-    persist.radio.mode_pref_nv10=0 \
-    persist.sys.language=zh \
-    persist.sys.country=CN \
-    persist.sys.timezone=Asia/Shanghai
+    persist.radio.mode_pref_nv10=0 
 
 # update 1x signal strength after 2s
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
