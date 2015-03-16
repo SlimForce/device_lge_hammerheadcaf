@@ -19,6 +19,11 @@
 #
 # Everything in this directory will become public
 
+PRODUCT_COPY_FILES +=  $(call find-copy-subdir-files,*,$(LOCAL_PATH)/sbin,root/sbin)
+
+ifeq ($(TARGET_KERNEL_WITHOUT_SYNAPSE),)
+    PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/res/synapse,root/res/synapse)
+endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.hammerhead.rc:root/init.hammerhead.rc \

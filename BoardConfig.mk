@@ -23,7 +23,7 @@ KRAIT_TUNINGS := true
 ENABLE_GCCONLY := true
 GRAPHITE_OPTS := true
 STRICT_ALIASING := true
-BOOT_ZIP_OUT_FILE := SlimKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d")
+BOOT_ZIP_OUT_FILE := SlimForceKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d")
 
 # Disable periodic battery polling
 HEALTHD_CHATTY_MODE := false
@@ -133,7 +133,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerheadcaf
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
+TARGET_KERNEL_CONFIG := slim_hammerhead_chaos_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 ENABLE_GRAPHITE := true
 
