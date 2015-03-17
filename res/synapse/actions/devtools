@@ -24,13 +24,13 @@ case $1 in
 	;;
 	optimizedb)
 		for i in `$BB find /data -iname "*.db"`; do 
-			/res/synapse/files/sqlite3 $i 'VACUUM;' 2> /dev/null;
-			/res/synapse/files/sqlite3 $i 'REINDEX;' 2> /dev/null;
+			/system/xbin/sqlite3 $i 'VACUUM;' 2> /dev/null;
+			/system/xbin/sqlite3 $i 'REINDEX;' 2> /dev/null;
 		done;
 
 		for i in `$BB find /sdcard -iname "*.db"`; do
-			/res/synapse/files/sqlite3 $i 'VACUUM;' 2> /dev/null;
-			/res/synapse/files/sqlite3 $i 'REINDEX;' 2> /dev/null;
+			/system/xbin/sqlite3 $i 'VACUUM;' 2> /dev/null;
+			/system/xbin/sqlite3 $i 'REINDEX;' 2> /dev/null;
 		done;
 		
 		$BB echo "Databases have been optimized.";

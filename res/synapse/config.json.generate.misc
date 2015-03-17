@@ -81,7 +81,7 @@ cat << CTAG
 					action:"generic /sys/kernel/fast_charge/fast_charge_level",
 					values:{ 0:"Disabled",'
 						for CHARGE in \`$BB cat /sys/kernel/fast_charge/available_charge_levels\`; do
-							$BB echo "$CHARGE:\"${CHARGE} mA\", ";
+							$BB echo "$CHARGE:\\\"${CHARGE} mA\\\", ";
 						done;
 					$BB echo '}
 				}},'
