@@ -30,7 +30,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -44,7 +44,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -58,7 +58,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -72,7 +72,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -86,7 +86,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -100,7 +100,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -114,7 +114,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -128,7 +128,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -142,7 +142,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -179,7 +179,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -194,7 +194,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -209,7 +209,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -224,7 +224,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -238,7 +238,7 @@ cat << CTAG
 `
 			while read FREQ TIME; do
 				LABEL=$(expr $FREQ / 1000)
-				echo "$FREQ:\\\"${LABEL}MHz\\\", "
+				echo "$FREQ:\"${LABEL}MHz\", "
 			done < /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 `
 		}
@@ -277,7 +277,7 @@ cat << CTAG
                 values:[
 `
                         for GOVERNOR in \`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors\` ; do
-                                echo "\\\"$GOVERNOR\\\","
+                                echo "\"$GOVERNOR\","
                         done
 `
                 ],
@@ -302,7 +302,7 @@ cat << CTAG
                 values:[
 `
                         for GOVERNOR in \`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors\` ; do
-                                echo "\\\"$GOVERNOR\\\","
+                                echo "\"$GOVERNOR\","
                         done
 `
                 ],
@@ -326,7 +326,7 @@ cat << CTAG
                 values:[
 `
                         for GOVERNOR in \`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors\` ; do
-                                echo "\\\"$GOVERNOR\\\","
+                                echo "\"$GOVERNOR\","
                         done
 `
                 ],
@@ -350,7 +350,7 @@ cat << CTAG
                 values:[
 `
                         for GOVERNOR in \`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors\` ; do
-                                echo "\\\"$GOVERNOR\\\","
+                                echo "\"$GOVERNOR\","
                         done
 `
                 ],
