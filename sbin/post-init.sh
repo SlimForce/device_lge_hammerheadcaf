@@ -39,17 +39,17 @@ mkdir /tmp;
 chown -R root:system /tmp/;
 chmod -R 777 /tmp/;
 chmod -R 777 /res/;
-chmod 6755 /res/synapse/actions/*;
 chmod 6755 /sbin/*;
 chmod 6755 /system/xbin/*;
-echo "Boot initiated on $(date)" > /tmp/bootcheck;
 
 # Tune LMK with values we love
 echo "1536,2048,4096,16384,28672,32768" > /sys/module/lowmemorykiller/parameters/minfree
 echo 32 > /sys/module/lowmemorykiller/parameters/cost
 
 if [ -d "/res/synapse" ]; then
-	ln -s /res/synapse/uci /sbin/uci
+	chmod 6755 /res/synapse/actions/*;
+    ln -s /res/synapse/uci /sbin/uci
 	chmod 777 /sbin/uci
-	/sbin/uci > /tmp/uci.boot 2>&1
 fi
+
+echo "Boot initiated on $(date)" > /tmp/bootcheck;

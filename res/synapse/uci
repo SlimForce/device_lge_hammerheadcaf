@@ -33,7 +33,7 @@ if [ ! -f $UCI_CONFIG ]; then
 	$BB mount -t rootfs -o rw,remount rootfs;
 	$BB chmod -R 755 $UCI_ACTION;
 	
-	source /res/synapse/config.json.generate > $UCI_CONFIG 2>/tmp/uci.config ;
+	source /res/synapse/config.json.generate > $UCI_CONFIG 2>/tmp/uci.debug ;
 	
 	$BB mount -t rootfs -o rw,remount rootfs;
 fi;
