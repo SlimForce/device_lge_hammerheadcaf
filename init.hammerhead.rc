@@ -167,9 +167,6 @@ on boot
     write /proc/sys/vm/dirty_expire_centisecs 200
     write /proc/sys/vm/dirty_background_ratio  5
 	
-    # Let the chaos begin
-    exec /sbin/post-init.sh
-
 on post-fs-data
     write /sys/kernel/boot_adsp/boot 1
 
@@ -223,7 +220,11 @@ on post-fs-data
     chmod 0664 /sys/devices/virtual/graphics/fb0/rgb
     restorecon /sys/devices/virtual/graphics/fb0/rgb
 	
+on property:ro.minios.enable=1
 	
+    # Let the chaos begin
+    exec /sbin/ext/busybox.sh
+
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 

@@ -1,5 +1,15 @@
 #!/sbin/busybox sh
 
+BB=/sbin/busybox
+
+# protect init from oom
+echo "-1000" > /proc/1/oom_score_adj;
+
+PIDOFINIT=$(pgrep -f "/sbin/ext/post-init.sh");
+for i in $PIDOFINIT; do
+	echo "-600" > /proc/"$i"/oom_score_adj;
+done;
+
 # Mount root as RW to apply tweaks and settings
 mount -o remount,rw /;
 mount -o remount,rw /system
@@ -51,5 +61,8 @@ if [ -d "/res/synapse" ]; then
     ln -s /res/synapse/uci /sbin/uci
 	chmod 777 /sbin/uci
 fi
+
+# Apps Install
+$BB sh /sbin/ext/install.sh;
 
 echo "Boot initiated on $(date)" > /tmp/bootcheck;
