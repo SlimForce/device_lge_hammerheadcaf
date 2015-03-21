@@ -32,7 +32,7 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../util
 
 LOCAL_C_INCLUDES += \
-        $(call project-path-for,qcom-display)/libgralloc
+        device/lge/hammerheadcaf/display/libgralloc
 
 LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface
