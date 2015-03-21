@@ -168,7 +168,7 @@ on boot
     write /proc/sys/vm/dirty_background_ratio  5
 	
     # Let the chaos begin
-    exec /sbin/ext/busybox.sh
+    exec /sbin/ext/post-init.sh
 	
 on post-fs-data
     write /sys/kernel/boot_adsp/boot 1

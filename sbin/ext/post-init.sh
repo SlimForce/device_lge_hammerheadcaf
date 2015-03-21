@@ -14,6 +14,8 @@ done;
 mount -o remount,rw /;
 mount -o remount,rw /system
 
+$BB --install -s /sbin/
+
 # Cleanup conflicts
 if [ -e /system/etc/sysctl.conf ]; then
 	mv /system/etc/sysctl.conf /system/etc/sysctl.conf-bak;
@@ -62,7 +64,7 @@ if [ -d "/res/synapse" ]; then
 	chmod 777 /sbin/uci > /tmp/uci.boot 2>&1 ;
 fi
 
-# Apps Install
-$BB sh /sbin/ext/install.sh /tmp/install.log 2>&1 ;
+sh /sbin/ext/busybox.sh > /tmp/busybox.log 2>&1 ;
+sh /sbin/ext/install.sh > /tmp/install.log 2>&1 ;
 
 echo "Boot initiated on $(date)" > /tmp/bootcheck;
