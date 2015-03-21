@@ -28,7 +28,7 @@ $BB cp /sbin/busybox /system/xbin/;
 
 /system/xbin/busybox --install -s /system/xbin/
 
-chmod 06755 /system/xbin/busybox;
+$BB chmod 06755 /system/xbin/busybox;
 if [ -e /system/xbin/su ]; then
 	$BB chmod 06755 /system/xbin/su;
 fi;

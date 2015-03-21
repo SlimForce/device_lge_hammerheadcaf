@@ -59,10 +59,10 @@ echo 32 > /sys/module/lowmemorykiller/parameters/cost
 if [ -d "/res/synapse" ]; then
 	chmod 6755 /res/synapse/actions/*;
     ln -s /res/synapse/uci /sbin/uci
-	chmod 777 /sbin/uci
+	chmod 777 /sbin/uci > /tmp/uci.boot 2>&1 ;
 fi
 
 # Apps Install
-$BB sh /sbin/ext/install.sh;
+$BB sh /sbin/ext/install.sh /tmp/install.log 2>&1 ;
 
 echo "Boot initiated on $(date)" > /tmp/bootcheck;

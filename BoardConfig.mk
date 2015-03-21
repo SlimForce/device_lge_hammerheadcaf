@@ -24,7 +24,7 @@ KRAIT_TUNINGS := true
 ENABLE_GCCONLY := true
 GRAPHITE_OPTS := true
 STRICT_ALIASING := true
-BOOT_ZIP_OUT_FILE := SlimForceKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d")
+BOOT_ZIP_OUT_FILE := SlimKernel-Chaos-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d-%H")
 
 # Disable periodic battery polling
 HEALTHD_CHATTY_MODE := false
