@@ -16,12 +16,21 @@ cd /;
 STWEAKS_CHECK=$($BB find /data/app/ -name com.af.synapse* | wc -l);
 
 if [ "$STWEAKS_CHECK" -eq "1" ]; then
+	echo "/data/app";
 	$BB rm -rf /data/app/com.af.synapse* > /dev/null 2>&1;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
 
 if [ -f /system/priv-app/com.af.synapse* ]; then
-	$BB rm /system/priv-app/com.af.synapse*;
+	echo "/system/priv-app";
+	$BB rm -rf /system/priv-app/com.af.synapse*;
+	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
+fi;
+
+if [ -f /system/app/com.af.synapse* ]; then
+	echo "/system/app";
+	$BB rm -rf /system/app/com.af.synapse*;
+	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
 
 if [ ! -d /system/app/Synapse ]; then
@@ -32,6 +41,7 @@ if [ -f /system/app/Synapse/Synapse.apk ]; then
 	stmd5sum=$($BB md5sum /system/app/Synapse/Synapse.apk | $BB awk '{print $1}');
 	stmd5sum_kernel=$($BB cat /res/payload/Synapse.md5);
 	if [ "$stmd5sum" != "$stmd5sum_kernel" ]; then
+		echo "reinstall, stmd5sum = $stmd5sum , stmd5sum_kernel = $stmd5sum_kernel"
 		$BB rm -rf /system/app/Synapse/* > /dev/null 2>&1;
 		$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 		$BB cp /res/payload/Synapse.apk /system/app/Synapse/;
@@ -40,6 +50,7 @@ if [ -f /system/app/Synapse/Synapse.apk ]; then
 		$BB chmod 644 /system/app/Synapse/Synapse.apk;
 	fi;
 else
+	echo "install"
 	$BB rm -rf /system/app/Synapse/* > /dev/null 2>&1;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 	$BB cp /res/payload/Synapse.apk /system/app/Synapse/;
