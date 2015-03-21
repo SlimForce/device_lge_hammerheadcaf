@@ -15,7 +15,8 @@
 #
 
 # Compiler flags
-TARGET_GCC_VERSION_EXP := 4.8
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.9-dori/bin/arm-LG-linux-gnueabi-
+# TARGET_GCC_VERSION_EXP := 4.9
 TARGET_USE_PIPE := true
 USE_O3_OPTIMIZATIONS := true
 SUPPRES_UNUSED_WARNING := true
