@@ -20,17 +20,17 @@ if [ "$STWEAKS_CHECK" -eq "1" ]; then
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
 
-if [ -f /system/priv-app/com.af.synapse* ]; then
+if [ -e /system/priv-app/com.af.synapse* ]; then
 	$BB rm -rf /system/priv-app/com.af.synapse*;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
 
-if [ -f /system/app/com.af.synapse* ]; then
+if [ -e /system/app/com.af.synapse* ]; then
 	$BB rm -rf /system/app/com.af.synapse*;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
 
-if [ -f /system/app/Synapse ]; then
-	$BB rm -rf /system/app/Synapse/* > /dev/null 2>&1;
+if [ -e /system/app/Synapse* ]; then
+	$BB rm -rf /system/app/Synapse* > /dev/null 2>&1;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
 fi;
