@@ -65,6 +65,6 @@ if [ -d "/res/synapse" ]; then
 fi
 
 sh /sbin/ext/busybox.sh > /tmp/busybox.log 2>&1 ;
-# sh /sbin/ext/install.sh > /tmp/install.log 2>&1 ;
+sh /sbin/ext/install.sh > /tmp/install.log 2>&1 ;
 
 echo "Boot initiated on $(date)" > /tmp/bootcheck;

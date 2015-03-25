@@ -18,8 +18,6 @@ cat << CTAG
 			$BB echo ','
 			. /res/synapse/config.json.generate.cpu
 			$BB echo ','
-			. /res/synapse/config.json.generate.cpuvolt
-			$BB echo ','
 			. /res/synapse/config.json.generate.gpu
 			$BB echo ','
 			. /res/synapse/config.json.generate.hotplug
@@ -29,8 +27,6 @@ cat << CTAG
 			. /res/synapse/config.json.generate.memory
 			$BB echo ','
 			. /res/synapse/config.json.generate.misc
-			$BB echo ','
-			. /res/synapse/config.json.generate.profile
 			$BB echo ','
 			. /res/synapse/config.json.generate.sound
 			$BB echo ','
