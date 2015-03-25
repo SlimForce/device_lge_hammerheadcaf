@@ -35,6 +35,12 @@ case $1 in
 		
 		$BB echo "Databases have been optimized.";
 	;;
+	fstrim)
+		$BB echo `fstrim -v /system`;
+		$BB echo `fstrim -v /cache`;
+		$BB echo `fstrim -v /data`;
+		$BB echo "Filesystem have been trimed.";
+	;;
 	logcat)
 		saved="$LOGS/logcat-$TIMESTAMP.txt";
 		[ ! -d "$LOGS" ] && $BB mkdir -p "$LOGS";

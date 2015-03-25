@@ -50,6 +50,13 @@ cat << CTAG
 					label:"Optimize Databases",
 					action:"devtools optimizedb"
 				}},
+				{ SDescription:{
+					description:"Use this button to trim Filesystem."
+				}},
+				{ SButton:{
+					label:"Trim Filesystem",
+					action:"devtools fstrim"
+				}},
 			{ SPane:{
 				title:"Log Creation"
 			}},

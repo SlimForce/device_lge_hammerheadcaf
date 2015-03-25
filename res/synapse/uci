@@ -5,28 +5,29 @@ DEVICE=/res/synapse/files/hammerhead.sh;
 
 UCI_CONFIG=/res/synapse/config.json;
 UCI_ACTION=/res/synapse/actions/;
-SYNAPSE_SD_DIR=/sdcard/Synapse;
+SYNAPSE_DATA_DIR=/data/.synapse;
 
 # Mount root as RW to apply tweaks and settings
 $BB mount -t rootfs -o remount,rw rootfs;
 $BB mount -o remount,rw /;
 
 if [ ! -f $UCI_CONFIG ]; then
-	[ ! -d "$SYNAPSE_SD_DIR" ] && $BB mkdir -p "$SYNAPSE_SD_DIR";
+	[ ! -d "$SYNAPSE_DATA_DIR" ] && $BB mkdir -p "$SYNAPSE_DATA_DIR";
+	
 	# Use this trigger to reset Synapse settings on boot.
 	# Just increment it for cases like default parameters are changed
 	# for some drivers and you wish user to use these parameters on boot.
 	KERNEL_CURR=20150325-lollipop-caf-alpha ;
 	
-	if [ ! -f "$SYNAPSE_SD_DIR/last_kernel" ]; then
+	if [ ! -f "$SYNAPSE_DATA_DIR/last_kernel" ]; then
 		$BB rm -R /data/data/com.af.synapse/databases;
-		$BB echo "$KERNEL_CURR" > $SYNAPSE_SD_DIR/last_kernel;
+		$BB echo "$KERNEL_CURR" > $SYNAPSE_DATA_DIR/last_kernel;
 	else
-		KERNEL_LAST=`$BB cat $SYNAPSE_SD_DIR/last_kernel 2> /dev/null`;
+		KERNEL_LAST=`$BB cat $SYNAPSE_DATA_DIR/last_kernel 2> /dev/null`;
 		
 		if [ "$KERNEL_CURR" != "$KERNEL_LAST" ]; then
 			$BB rm -R /data/data/com.af.synapse/databases;
-			$BB echo "$KERNEL_CURR" > $SYNAPSE_SD_DIR/last_kernel;
+			$BB echo "$KERNEL_CURR" > $SYNAPSE_DATA_DIR/last_kernel;
 		fi
 	fi
 
