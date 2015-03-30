@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \\
     PPPreference \\
     qcrilmsgtunnel \\
     shutdownlistener \\
-    TimeService \\
-    UpdateSetting
+    TimeService 
 
 # Libs
 PRODUCT_PACKAGES += \\
