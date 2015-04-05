@@ -57,6 +57,10 @@ chmod 6755 /system/xbin/*;
 # Tune LMK with values we love
 echo "1536,2048,4096,16384,28672,32768" > /sys/module/lowmemorykiller/parameters/minfree
 echo 32 > /sys/module/lowmemorykiller/parameters/cost
+# echo 1 > /sys/module/msm_pm/modes/cpu0/wfi/idle_enabled
+# echo 1 > /sys/module/msm_pm/modes/cpu0/retention/idle_enabled
+# echo 1 > /sys/module/msm_pm/modes/cpu0/standalone_power_collapse/idle_enabled
+# echo 1 > /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled
 
 if [ -d "/res/synapse" ]; then
 	chmod 6755 /res/synapse/actions/*;
