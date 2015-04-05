@@ -37,7 +37,8 @@ if [ ! -d /system/app/Synapse ]; then
 	$BB mkdir /system/app/Synapse;
 fi;
 
-if [ -f /system/app/Synapse/Synapse.apk ]; then
+if [ -f /res/payload/Synapse.md5 ]; then
+  if [ -f /system/app/Synapse/Synapse.apk ]; then
 	stmd5sum=$($BB md5sum /system/app/Synapse/Synapse.apk | $BB awk '{print $1}');
 	stmd5sum_kernel=$($BB cat /res/payload/Synapse.md5);
 	if [ "$stmd5sum" != "$stmd5sum_kernel" ]; then
@@ -49,7 +50,7 @@ if [ -f /system/app/Synapse/Synapse.apk ]; then
 		$BB chmod 755 /system/app/Synapse;
 		$BB chmod 644 /system/app/Synapse/Synapse.apk;
 	fi;
-else
+  else
 	echo "install"
 	$BB rm -rf /system/app/Synapse/* > /dev/null 2>&1;
 	$BB rm -rf /data/data/com.af.synapse* > /dev/null 2>&1;
@@ -57,4 +58,5 @@ else
 	$BB chown root.root /system/app/STweaks.apk;
 	$BB chmod 755 /system/app/Synapse;
 	$BB chmod 644 /system/app/Synapse/Synapse.apk;
+  fi;
 fi;

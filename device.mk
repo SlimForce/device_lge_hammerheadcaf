@@ -21,7 +21,7 @@
 
 PRODUCT_COPY_FILES +=  \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/sbin,root/sbin) \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/res,root/res) 
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/res/synapse,root/res/synapse)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.hammerhead.rc:root/init.hammerhead.rc \
