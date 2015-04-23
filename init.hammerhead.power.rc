@@ -29,7 +29,7 @@ on charger
 
 on early-init
     setprop sys.perf.profile 2
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 128
 
 on property:init.svc.bootanim=running
     setprop sys.perf.profile 2
@@ -100,7 +100,7 @@ on property:init.svc.bootanim=stopped
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 100000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
 
-    write /sys/block/mmcblk0/queue/scheduler row
+    write /sys/block/mmcblk0/queue/scheduler zen
     write /dev/cpuctl/cpu.notify_on_migrate 1
 
     setprop sys.perf.profile 1
